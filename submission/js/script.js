@@ -12,3 +12,29 @@ trendingJerseys.forEach((jersey) => {
     item.innerHTML = `<h3>${jersey.name}</h3><span>${jersey.price}</span>`;
     servicesList.appendChild(item);
 });
+//STEP 2
+const wishlistInput = document.getElementById("wishlist-input");
+const wishlistAddBtn = document.getElementById("wishlist-add-btn");
+const wishlistItems = document.getElementById("wishlist-items");
+
+wishlistAddBtn.addEventListener("click", () => {
+    const value = wishlistInput.value.trim();
+    if (value === "") return;
+
+    const li = document.createElement("li");
+
+    const span = document.createElement("span");
+    span.textContent = value;
+
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.addEventListener("click", () => {
+        li.remove();
+    });
+
+    li.appendChild(span);
+    li.appendChild(removeBtn);
+    wishlistItems.appendChild(li);
+
+    wishlistInput.value = "";
+});
