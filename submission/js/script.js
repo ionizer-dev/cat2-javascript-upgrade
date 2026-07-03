@@ -38,3 +38,32 @@ wishlistAddBtn.addEventListener("click", () => {
 
     wishlistInput.value = "";
 });
+//STEP 3
+const orderForm = document.getElementById("order-form");
+const orderName = document.getElementById("order-name");
+const orderJersey = document.getElementById("order-jersey");
+const orderFeedback = document.getElementById("order-feedback");
+
+orderForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const nameValue = orderName.value.trim();
+    const jerseyValue = orderJersey.value.trim();
+
+    if (nameValue === "" || jerseyValue === "") {
+        orderFeedback.textContent = "Please fill in both your name and the jersey you want.";
+        orderFeedback.style.color = "red";
+        return;
+    }
+
+    if (nameValue.length < 2) {
+        orderFeedback.textContent = "Please enter a valid name.";
+        orderFeedback.style.color = "red";
+        return;
+    }
+
+    orderFeedback.textContent = `wagwan, ${nameValue}! We've received your inquiry for the ${jerseyValue}. We'll WhatsApp you shortly.`;
+    orderFeedback.style.color = "green";
+
+    orderForm.reset();
+});

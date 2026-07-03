@@ -415,4 +415,21 @@ a {
     border-radius: 4px;
     cursor: pointer;
 }
+#order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+#order-form input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+#order-feedback {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
 }
