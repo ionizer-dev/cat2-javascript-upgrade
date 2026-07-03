@@ -1,0 +1,22 @@
+Implementation Notes for  CAT 2 for my website JerseyIT
+
+1. Loop-rendered content: trendingJerseys array of objects (each with a 
+   name property) rendered into #services-list using forEach() and 
+   createElement/innerHTML — shown as the "Trending Right Now" section.
+
+2. Add/remove elements: Wishlist section lets users type a jersey name and 
+   click "Add to Wishlist", which creates a new list item via 
+   createElement()/appendChild(). Each item has its own Remove button 
+   using remove().
+
+3. Form validation: Order inquiry form (#order-form) uses 
+   event.preventDefault() and .value to read the name and jersey fields, 
+   with manual validation (empty check, minimum name length) and feedback 
+   written back via textContent in #order-feedback.
+
+4. localStorage: Dark mode toggle button in the header saves "dark" or 
+   "light" to localStorage. On page load, the saved theme is reapplied to 
+   body, so dark mode survives a refresh.
+
+5. Click-to-reveal banner: Clicking the hero banner image toggles the 
+   "hidden" class on the caption paragraph using classList.toggle().
