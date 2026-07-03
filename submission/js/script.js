@@ -83,3 +83,10 @@ themeToggleBtn.addEventListener("click", () => {
         localStorage.setItem("theme", "light");
     }
 });
+//STEP 5
+const bannerImg = document.getElementById("banner-img");
+const bannerCaption = document.getElementById("banner-caption");
+
+bannerImg.addEventListener("click", () => {
+    bannerCaption.classList.toggle("hidden");
+});
